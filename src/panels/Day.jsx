@@ -13,6 +13,13 @@ import {
 import classes from "../sass";
 
 class Day extends Component {
+  get currentMonth() {
+    const { moment, lang } = this.props
+    const momentLocale = moment.clone()
+    momentLocale.locale(lang)
+    return momentLocale.format(DAY_FORMAT)
+  }
+
   constructor(props) {
     super(props);
     const { isSolar } = props;
@@ -223,7 +230,7 @@ class Day extends Component {
             className={classes["current-date"]}
             onClick={changePanel.bind(this, "month", _moment)}
           >
-            {_moment.format(dayFormat)}
+            { this.currentMonth }
           </span>
           <button
             type="button"
