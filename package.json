@@ -1,6 +1,6 @@
 {
   "name": "imrc-datetime-picker",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "(Improved) React component datetime picker by momentjs",
   "main": "dist/imrc-datetime-picker.js",
   "keywords": [
@@ -14,20 +14,23 @@
   ],
   "scripts": {
     "clean-docs": "bash build/clean-docs.sh",
-    "dev-server": "npm run clean-docs && webpack-dev-server --inline --progress --color --hot --config ./webpack.config.doc.babel.js",
+    "dev-server": "webpack-dev-server --inline --progress --color --hot --config ./webpack.config.doc.babel.js",
     "dev": "npm run dev-server -- --env=development",
     "build-docs": "bash build/docs.sh",
-    "build-js": "webpack --config ./webpack.config.babel.js --progress --env.minify false",
+    "build-js": "webpack --config ./webpack.config.babel.js --progress --env.minify true",
     "build-min-js": "webpack --config ./webpack.config.babel.js --progress -p --env.minify true",
     "build": "rm -rf ./dist && npm run build-js && npm run build-min-js",
-    "release": "bash build/release.sh"
+    "release": "bash build/release.sh",
+    "start": "webpack-dev-server -inline --progress --env=development --config ./webpack.config.js"
   },
   "author": "alberss",
-  "contributors": [{
-    "name": "Valudio",
-    "email": "development@valudio.com",
-    "url": "https://www.valudio.com/en"
-  }],
+  "contributors": [
+    {
+      "name": "Valudio",
+      "email": "development@valudio.com",
+      "url": "https://www.valudio.com/en"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://imrc-datetime-picker.js.org",
   "dependencies": {

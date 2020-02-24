@@ -264,6 +264,7 @@ class PopupPickerSeconds extends Component {
         showTimePicker={true}
         showSecondsPicker={true}
         position="top"
+        lang='en-US'
       >
         <input type="text" value={value} readOnly />
         <span
