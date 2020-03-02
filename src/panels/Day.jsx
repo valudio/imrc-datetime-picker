@@ -182,7 +182,7 @@ class Day extends Component {
     const {
       isSolar,
       lang,
-      weeks = lang == "fa" ? WEEKS_FA : WEEKS,
+      weeks = WEEKS[lang],
       dayFormat = isSolar ? DAY_FORMAT_SOLAR : DAY_FORMAT,
       style,
       changePanel

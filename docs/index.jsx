@@ -78,7 +78,7 @@ class InlinePicker extends Component {
           showTimePicker={false}
           showSecondsPicker={false}
           isSolar={isSolar}
-          lang={isFa ? "fa" : "en"}
+          lang={isFa ? "fa" : "en-US"}
         />
         <input
           type="checkbox"
@@ -124,7 +124,7 @@ class PopupPickerBottom extends Component {
   render() {
     const { _moment, cleared } = this.state;
 
-    moment.locale("en");
+    moment.locale("en-US");
     const newMoment = moment();
 
     const shortcuts = {
@@ -148,6 +148,7 @@ class PopupPickerBottom extends Component {
         showTimePicker={false}
         showSecondsPicker={false}
         position="bottom"
+        lang="en-US"
       >
         <input type="text" value={value} readOnly />
         <span
@@ -206,6 +207,7 @@ class PopupPickerTop extends Component {
         showTimePicker={false}
         showSecondsPicker={false}
         position="top"
+        lang="fr-FR"
       >
         <input type="text" value={value} readOnly />
         <span
@@ -264,7 +266,7 @@ class PopupPickerSeconds extends Component {
         showTimePicker={true}
         showSecondsPicker={true}
         position="top"
-        lang='en-US'
+        lang='es-ES'
       >
         <input type="text" value={value} readOnly />
         <span
