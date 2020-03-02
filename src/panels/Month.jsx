@@ -10,26 +10,26 @@ import classes from "../sass";
 class Month extends Component {
   constructor(props) {
     super(props);
-    const { isSolar, lang } = props;
+    const { isSolar } = props;
 
     this.state = {
       moment: props.moment,
       yearStr: isSolar ? "jYear" : "year",
       monthStr: isSolar ? "jMonth" : "month",
       dateStr: isSolar ? "jDate" : "date",
-      months: MONTHS[lang]
+      months: MONTHS
     };
   }
 
   componentWillReceiveProps(props) {
-    const { isSolar, lang } = props;
+    const { isSolar } = props;
 
     this.setState({
       moment: props.moment,
       yearStr: isSolar ? "jYear" : "year",
       monthStr: isSolar ? "jMonth" : "month",
       dateStr: isSolar ? "jDate" : "date",
-      months: MONTHS[lang]
+      months: MONTHS
     });
   }
 
@@ -223,7 +223,7 @@ class Month extends Component {
                 </tr>
               );
             })}
-          </tbody> 
+          </tbody>
         </table>
       </div>
     );
