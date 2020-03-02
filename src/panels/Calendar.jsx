@@ -32,6 +32,8 @@ class Calendar extends Component {
     const { range, rangeAt } = props;
     const now = this.state ? this.state.moment || moment() : moment();
     let result = props.moment;
+    result.locale(props.lang)
+    now.locale(props.lang)
 
     if (result) {
       if (range) {
