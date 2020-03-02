@@ -17,13 +17,7 @@ class Month extends Component {
       yearStr: isSolar ? "jYear" : "year",
       monthStr: isSolar ? "jMonth" : "month",
       dateStr: isSolar ? "jDate" : "date",
-      months: isSolar
-        ? lang == "fa"
-          ? MONTHS_SOLAR_FA
-          : MONTHS_SOLAR
-        : lang == "fa"
-          ? MONTHS_FA
-          : MONTHS
+      months: MONTHS[lang]
     };
   }
 
@@ -35,13 +29,7 @@ class Month extends Component {
       yearStr: isSolar ? "jYear" : "year",
       monthStr: isSolar ? "jMonth" : "month",
       dateStr: isSolar ? "jDate" : "date",
-      months: isSolar
-        ? lang == "fa"
-          ? MONTHS_SOLAR_FA
-          : MONTHS_SOLAR
-        : lang == "fa"
-          ? MONTHS_FA
-          : MONTHS
+      months: MONTHS[lang]
     });
   }
 
@@ -226,7 +214,7 @@ class Month extends Component {
             />
           </button>
         </div>
-        <table>
+        <table className="months">
           <tbody>
             {chunk(months, 3).map((_months, idx) => {
               return (
@@ -235,7 +223,7 @@ class Month extends Component {
                 </tr>
               );
             })}
-          </tbody>
+          </tbody> 
         </table>
       </div>
     );
